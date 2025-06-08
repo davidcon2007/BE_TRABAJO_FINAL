@@ -1,6 +1,6 @@
 import { configDotenv } from "dotenv";
 import jwt from "jsonwebtoken";
-import Users from "../routers/users/users-entity.js";
+import User from "../routes/users.routes.js";
 
 configDotenv();
 export const authMiddleware = async (req, res, next) => {
@@ -11,7 +11,7 @@ export const authMiddleware = async (req, res, next) => {
 
         const { userId } = jwt.verify(token, process.env.SECRET);
 
-        const user = await Users.findOne({ where: { id: userId } });
+        const user = await User.findOne({ where: { id: userId } });
 
         if (!user) {
             return res.status(404).json({ data: "Usuario no disponible" });

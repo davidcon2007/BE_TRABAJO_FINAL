@@ -1,18 +1,23 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../config/db.js";
 
-const User = sequelize.define("users",{
-    name:{
+export const User = sequelize.define("Users", {
+    name: {
         type: DataTypes.STRING,
         allowNull: false,
-        DefaultValue: "name",
+        defaultValue: "name",
     },
     age: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
     },
     email: {
         type: DataTypes.STRING,
-        allowNull: false
-    }
+        allowNull: false,
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
 });
+
 User.sync();

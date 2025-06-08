@@ -1,18 +1,21 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../config/db.js";
 
-const Products = sequelize.define("Productos", {
+export const Products = sequelize.define("productos", {
     nombre: {
         type: DataTypes.STRING,
         allowNull: false,
+        defaultValue: "name",
     },
     talla: {
         type: DataTypes.STRING,
         allowNull: false,
+        defaultValue: "name",
     },
     color: {
         type: DataTypes.STRING,
         allowNull: false,
+        defaultValue: "name",
     },
     precio: {
         type: DataTypes.INTEGER,
@@ -25,5 +28,3 @@ const Products = sequelize.define("Productos", {
 });
 
 Products.sync();
-
-export default Products;

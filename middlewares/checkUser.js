@@ -3,11 +3,11 @@ import { User } from "../entity/users.entity.js";
 export const checkUserInDB = async (req, res, next) => {
     const { id } = req.params;
 
-    const user = await User.findOne({ where: { id: +id } });
+    const Users = await User.findOne({ where: { id: +id } });
 
-    if (!user) {
+    if (!User) {
         return res.status(404).json({
-            error: "No existe el usuario",
+            error: "User doesn't exists",
         });
     }
 
