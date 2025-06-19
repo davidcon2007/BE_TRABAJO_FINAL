@@ -7,7 +7,7 @@ pipeline {
         DOCKER_CREDS = credentials('docker-hub-credentials')
         GIT_REPO_URL = 'https://github.com/davidcon2007/BE_TRABAJO_FINAL.git'
         DOCKER_IMAGE_NAME = 'davidcon2007/ecommerce-backend'
-
+    }
     stages {
         stage('Clone Repository') {
             steps {
@@ -76,5 +76,4 @@ pipeline {
             echo 'Pipeline failed - check logs for details'
         }
     }
-}
 }
