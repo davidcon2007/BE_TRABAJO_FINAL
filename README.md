@@ -1,2 +1,2 @@
 # BE
-La nueva funcionalidad es para eliminar un producto
+# La nueva funcionalidad es Eliminar un producto
